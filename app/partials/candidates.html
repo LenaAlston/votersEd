@@ -1,6 +1,20 @@
 <!-- candidates.html -->
+<script src="js/controllers.js"></script>
+<script src="js/app.js"></script>
     <div class="jumbotron text-center">
         <h1>Know Your Candidates</h1>
-
-        <p>{{ message }}</p>
     </div>
+
+    <body ng-controller="candidatesController">
+        	<table style="width:100%">
+
+  			<tr ng-repeat="i in democrats">
+    			<td> <img ng-src="{{i.pic}}"/></td>
+    			<td> {{i.name}}</td>
+  			</tr>
+  			<tr ng-repeat="i in republicans">
+  				<td> <img ng-src="{{i.pic}}"/></td>
+    			<td>{{i.name}}</td>
+  			</tr>
+			</table>
+    </body> 
