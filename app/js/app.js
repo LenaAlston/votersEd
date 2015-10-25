@@ -29,9 +29,13 @@
 
     // create the controller and inject Angular's $scope
 
-    votersEdApp.controller('mainController', function($scope) {
+    votersEdApp.controller('mainController', function($scope, $http) {
         // create a message to display in our view
-        $scope.message = 'Everyone come and see how good I look!';
+        // $scope.message = 'Everyone come and see how good I look!';
+        $http.get('js/articles.json').success(function(data){
+          $scope.articles = data;
+          // console.log(data.response.docs);
+        });
     });
 
     votersEdApp.controller('candidatesController', function($scope) {
@@ -45,3 +49,6 @@
     votersEdApp.controller('subsController', function($scope) {
         $scope.message = 'Subscribe to receive notifications here.';
     });
+
+
+
