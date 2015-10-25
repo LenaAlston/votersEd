@@ -60,9 +60,17 @@
 
     // create the controller and inject Angular's $scope
 
-    votersEdApp.controller('mainController', function($scope) {
+    votersEdApp.controller('mainController', function($scope, $http) {
         // create a message to display in our view
-        $scope.message = 'Everyone come and see how good I look!';
+        // $scope.message = 'Everyone come and see how good I look!';
+        $http.get('js/articles.json').success(function(data){
+          $scope.articles = data;
+          // console.log(data.response.docs);
+        });
+    });
+
+    votersEdApp.controller('candidatesController', function($scope) {
+        $scope.message = 'Look! I am an candidates page.';
     });
 
     votersEdApp.controller('regInfoController', function($scope) {
@@ -78,7 +86,6 @@
           number: 5555555555
         };
     });
-
 
     votersEdApp.controller('candidatesController', function($scope) {
         // $scope.message = 'Look! I am an candidates page.';
