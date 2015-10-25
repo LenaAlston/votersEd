@@ -63,12 +63,6 @@
     votersEdApp.controller('mainController', function($scope) {
         // create a message to display in our view
         $scope.message = 'Everyone come and see how good I look!';
-        $scope.email = {
-          text: 'me@example.com'
-        };
-        $scope.phone = {
-          number: 5555555555
-        };
     });
 
     votersEdApp.controller('regInfoController', function($scope) {
@@ -77,6 +71,12 @@
 
     votersEdApp.controller('subsController', function($scope) {
         $scope.message = 'Subscribe to receive notifications here.';
+        $scope.email = {
+          text: 'me@example.com'
+        };
+        $scope.phone = {
+          number: 5555555555
+        };
     });
 
 
