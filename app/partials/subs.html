@@ -13,7 +13,7 @@
       <div role="alert">
         <span class="error" ng-show="emailForm.input.$error.email">
           Invalid Email!</span>
-          <button><a ng-href="mailto:{{email.text}}?Subject=Updates%20via%20MiVote" target="_top">Subscribe via Email</a></button>
+          <button><a ng-href="mailto:{{email.text}}?Subject=Updates%20via%20MiVote&body=Democratic%20Debate%20tomorrow%20at%208!" target="_top">Subscribe via Email</a></button>
       </div>
     </form>
       
@@ -35,7 +35,7 @@
         <span class="error" ng-show="numForm.carrier.$error.required">
           Choose a phone Carrier!
         </span>
-          <button><a ng-href="mailto:{{phone.number}}{{myCarrier.email}}?Subject=Updates%20via%20MiVote" target="_top">Subscribe via Text</a></button>
+          <button><a ng-href="mailto:{{phone.number}}{{myCarrier.email}}?Subject=Updates%20via%20MiVote&body=Democratic%20Debate%20tomorrow%20at%208!" target="_top">Subscribe via Text</a></button>
       </div>
     </form>
     </div>
