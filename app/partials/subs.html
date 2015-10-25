@@ -1,6 +1,33 @@
 <!-- subs.html -->
+    <body>
     <div class="jumbotron text-center">
         <h1>Subscriptions</h1>
 
         <p>{{ message }}</p>
     </div>
+    <form name="emailForm" ng-controller="subsController">
+      <label>Email: 
+        <input type="email" name="input" ng-model="email.text">
+      </label>
+      <div role="alert">
+        <span class="error" ng-show="emailForm.input.$error.email">
+          Invalid Email!</span>
+          <button><a ng-href="mailto:{{email.text}}?Subject=Updates%20via%20MiVote" target="_top">Subscribe via Email</a></button>
+      </div>
+    </form>
+      
+
+      <form name="numForm" ng-controller="subsController">
+      <label>Phone Number: 
+        <input type="text" name="input" ng-model="phone.number" ngMinlength = 10 ngMaxlength = 10>
+      </label>
+      <div role="alert">
+        <span class="error" ng-show="numForm.input.$error.text">
+          Invalid Number!</span>
+          <button><a ng-href="mailto:{{phone.number}}?Subject=Updates%20via%20MiVote" target="_top">Subscribe via Text</a></button>
+      </div>
+    </form>
+      
+
+
+    </body>

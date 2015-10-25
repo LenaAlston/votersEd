@@ -24,6 +24,37 @@
           otherwise({
             redirectTo: '/'
           });
+          // when('/candidates/1', {
+          //   templateUrl: 'partials/candidates.html',
+          //   controller: 'candidatesController'
+          // }).
+          // when('/candidates/2', {
+          //   templateUrl: 'partials/candidates.html',
+          //   controller: 'candidatesController'
+          // }).
+          // when('/candidates/3', {
+          //   templateUrl: 'partials/candidates.html',
+          //   controller: 'candidatesController'
+          // }).
+          // when('/candidates/4', {
+          //   templateUrl: 'partials/candidates.html',
+          //   controller: 'candidatesController'
+          // }).
+          // when('/candidates/5', {
+          //   templateUrl: 'partials/candidates.html',
+          //   controller: 'candidatesController'
+          // }).
+          // when('/candidates/6', {
+          //   templateUrl: 'partials/candidates.html',
+          //   controller: 'candidatesController'
+          // }).
+          // when('/candidates/7', {
+          //   templateUrl: 'partials/candidates.html',
+          //   controller: 'candidatesController'
+          // }).
+          // otherwise({
+          //   redirectTo: '/'
+          // });
       }]);
 
 
@@ -31,6 +62,7 @@
 
     votersEdApp.controller('mainController', function($scope, $http) {
         // create a message to display in our view
+<<<<<<< HEAD
         // $scope.message = 'Everyone come and see how good I look!';
         $http.get('js/articles.json').success(function(data){
           $scope.articles = data;
@@ -40,6 +72,15 @@
 
     votersEdApp.controller('candidatesController', function($scope) {
         $scope.message = 'Look! I am an candidates page.';
+=======
+        $scope.message = 'Everyone come and see how good I look!';
+        $scope.email = {
+          text: 'me@example.com'
+        };
+        $scope.phone = {
+          number: 5555555555
+        };
+>>>>>>> 243912b74ac6c8efe1e4524e1a0e962dfb5284e0
     });
 
     votersEdApp.controller('regInfoController', function($scope) {
@@ -50,5 +91,42 @@
         $scope.message = 'Subscribe to receive notifications here.';
     });
 
+    votersEdApp.controller('candidatesController', function($scope) {
+        // $scope.message = 'Look! I am an candidates page.';
+        $scope.democrats = [
+          {'name': 'Hillary Clinton',
+           'pic': 'img/cands/1.jpg',
+           'link': 1},
+          {'name': "Martin O'Malley",
+           'pic': 'img/cands/2.jpg',
+           'link': 2},
+          {'name': 'Bernie Sanders',
+           'pic': 'img/cands/3.jpg',
+           'link': 3}
+        ];
 
+        $scope.republicans = [
+        {'name': 'Jeb Bush',
+         'pic': 'img/cands/4.jpg',
+          'link': "#candidates"},
+        {'name': "Ben Carson",
+         'pic': 'img/cands/5.jpg',
+          'link': "#candidates"},
+        {'name': 'Chris Christie',
+         'pic': 'img/cands/6.jpg',
+          'link': "#candidates"},
+         {'name': 'Ted Cruz',
+         'pic': 'img/cands/7.jpg',
+          'link': "#candidates"},
+        {'name': "Carly Fiorina",
+         'pic': 'img/cands/8.jpg',
+          'link': "#candidates"},
+        {'name': 'Jim Gilmore',
+         'pic': 'img/cands/9.jpg',
+          'link': "#candidates"},
+         {'name': 'More republicans here ...',
+         'pic': 'img/cands/10.jpg',
+          'link': "#candidates"},
 
+      ];
+  });
