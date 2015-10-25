@@ -5,6 +5,7 @@
 
         <p>{{ message }}</p>
     </div>
+    <div class="center">
     <form name="emailForm" ng-controller="subsController">
       <label>Email: 
         <input type="email" name="input" ng-model="email.text">
@@ -17,17 +18,27 @@
     </form>
       
 
-      <form name="numForm" ng-controller="subsController">
+    <form name="numForm" ng-controller="subsController">
       <label>Phone Number: 
         <input type="text" name="input" ng-model="phone.number" ngMinlength = 10 ngMaxlength = 10>
       </label>
+      <label>Carrier:
+        <select ng-model="myCarrier" name="carrier" ng-options="carrier.name for carrier in carriers" ngRequired required></select>
+      </label>
       <div role="alert">
-        <span class="error" ng-show="numForm.input.$error.text">
-          Invalid Number!</span>
-          <button><a ng-href="mailto:{{phone.number}}?Subject=Updates%20via%20MiVote" target="_top">Subscribe via Text</a></button>
+        <span class="error" ng-show="numForm.input.$error.ngMinlength">
+          Invalid Number!
+        </span>
+        <span class="error" ng-show="numForm.input.$error.ngMaxlength">
+          Invalid Number!
+        </span>
+        <span class="error" ng-show="numForm.carrier.$error.required">
+          Choose a phone Carrier!
+        </span>
+          <button><a ng-href="mailto:{{phone.number}}{{myCarrier.email}}?Subject=Updates%20via%20MiVote" target="_top">Subscribe via Text</a></button>
       </div>
     </form>
-      
+    </div>
 
 
     </body>

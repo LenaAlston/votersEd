@@ -31,13 +31,8 @@
 
     votersEdApp.controller('mainController', function($scope) {
         // create a message to display in our view
-        $scope.message = 'Everyone come and see how good I look!';
-        $scope.email = {
-          text: 'me@example.com'
-        };
-        $scope.phone = {
-          number: 5555555555
-        };
+        $scope.message = 'Everyone come and see how good I look!'
+
     });
 
     votersEdApp.controller('candidatesController', function($scope) {
@@ -50,4 +45,18 @@
 
     votersEdApp.controller('subsController', function($scope) {
         $scope.message = 'Subscribe to receive notifications here.';
+
+        $scope.email = {
+          text: 'me@example.com'
+        };
+        $scope.phone = {
+          number: 5555555555
+        };
+        $scope.carriers = [
+          {name:'sprint', email: '@messaging.sprintpcs.com'},
+          {name : 'att', email: '@txt.att.net'},
+          {name : 'verizon', email: '@vtext.com'}
+        ];
+
+        $scope.myCarrier = $scope.carriers[0];
     });
